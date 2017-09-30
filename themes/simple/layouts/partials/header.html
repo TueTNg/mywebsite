@@ -1,0 +1,38 @@
+<nav class="navbar navbar-toggleable-sm">
+	<!-- Toggle button -->
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Brand -->
+  <a class="navbar-brand" href="/">{{ .Site.Title }}</a>
+
+  <!-- UL menu -->
+  <div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav ml-auto">
+    	{{ range .Site.Params.main_nav }}
+
+    	<!-- Dropdown menu item -->
+    	{{ if .subs}}
+    	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="{{ .identifier }}-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        	<span>{{ .name }}</span>
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="{{ .identifier }}-dropdown">
+        	{{ range .subs }}
+        		<a class="dropdown-item" href="{{ .url }}">{{ .name }}</a>
+        	{{ end }}
+        </div>
+      </li>
+
+      <!-- Regular menu item -->
+    	{{ else }}
+    	<li class="nav-item">
+        <a class="nav-link" href="{{ .url }}">{{ .name }}</a>
+      </li>
+    	{{ end }}
+    	{{ end }}
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{ partial "invisible/head.html" . }}
+</head>
+
+<body>
+	<div id="site-wrapper">
+		<!-- Header -->
+		<header id="site-header">
+			<span id="back-to-top"></span>
+			{{ partial "header.html" . }}
+		</header>
+
+		<aside id="site-sidebar">
+			{{ block "sidebar" . }}{{ end }}
+		</aside>
+
+		<!-- Content -->
+		<main id="site-main">
+			<div id="inner-main" class="content">
+				{{ block "main" . }}{{ end }}
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<footer id="site-footer">{{ partial "footer.html" . }}</footer>
+	</div>
+	{{ partial "invisible/js.html" . }}
+</body>
+</html>

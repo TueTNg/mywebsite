@@ -1,0 +1,13 @@
+{{ define "sidebar" }}
+	{{ partial "toc.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<article class="entry page">
+	<h1>{{ .Title }}</h1>
+
+	<section>
+		{{ .Content }}
+	</section>
+</article>
+{{ end }}
