@@ -1,0 +1,22 @@
+baseURL: ""
+languageCode: "en-us"
+title: "Tue Nguyen"
+theme: "simple"
+
+params:
+  custom_css: 
+    - "/css/main.css"
+
+  main_nav:
+    - name: "About"
+      url: "/about"
+    - name: "Vita"
+      url: "/vita"
+    - name: "Articles"
+      identifier: "articles"
+      subs: 
+        - name: "Logic"
+          url: "/logic"
+        - name: "Network Theory"
+          url: "/network-theory"
+
